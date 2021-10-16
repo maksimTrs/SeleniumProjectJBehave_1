@@ -86,13 +86,13 @@ public class SignUpPageSteps {
 
     @When("I set full birth date: $dateTable")
     public void setDate(ExamplesTable dateTable) {
-            for (Map<String,String> row : dateTable.getRows()) {
+          //  for (Map<String,String> row : dateTable.getRows()) {
+                Map<String,String> row  = dateTable.getRow(1);
                 String a = row.get("day");
                 String b = row.get("month");
                 String c = row.get("year");
                 signUpSteps.addBirthdayDataStep(a, b , c);
-                }
+          //      }
     }
-
 }
 
