@@ -8,12 +8,16 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.model.ExamplesTable;
 
+
 import java.util.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SignUpPageSteps {
     private static final String errorSpotifyYearField = "Вы не достигли возраста, с которого можно пользоваться сервисом Spotify.";
+    private static Logger logger = LogManager.getLogger(SignUpPageSteps.class);
 
     @Steps
     SignUpSteps signUpSteps;
@@ -21,11 +25,13 @@ public class SignUpPageSteps {
     @Given("I open signup page")
     public void givenStartPage() {
         signUpSteps.openSignUpPageStep();
+        logger.info("Test step \"I open signup page\" done !!!");
     }
 
     @Given("I close cookie message")
     public void closeCookie() {
         signUpSteps.closeCookieMessageStep();
+        logger.info("Test step \"I close cookie message\" done !!!");
     }
 
     @When("I set email $email and set $confemail")
@@ -41,11 +47,13 @@ public class SignUpPageSteps {
     @When("I set user name $username")
     public void whenAddNameData(@Named("username")String username) {
         signUpSteps.addNameDataStep(username);
+      //  logger.error("Test step \"I set user name username\" done !!!");
     }
 
     @When("I set birth day $birthday and  month $birthmonth and year $birthyear")
     public void whenAddBirthdayData(@Named("birthday")String birthday, @Named("birthmonth")String birthmonth, @Named("birthyear")String birthyear) {
         signUpSteps.addBirthdayDataStep(birthday, birthmonth, birthyear);
+        logger.info("birth day step done !!!");
     }
 
     @When("choose gender radio button and terms atterny $termscondition")
@@ -76,7 +84,7 @@ public class SignUpPageSteps {
 
     @Then("the $errNumber error equals to $errorName")
     public void thenGetErrorByNumber(int errNumber, String errorName) {
-        assertThat(signUpSteps.getErrorByNumberStep(errNumber)).as("Ошибки не совпадают!").isEqualTo(errorName);
+        assertThat(signUpSteps.getErrorByNumberStep(errNumber-1)).as("Ошибки не совпадают!").isEqualTo(errorName);
     }
 
     @Then("I can not see the error $errorName")

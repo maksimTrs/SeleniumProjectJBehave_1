@@ -14,7 +14,7 @@ And I set full birth date:
 | 19  | 11    | 1985 |
 And click on submit button
 Then I can see 6 errors
-And the 3 error equals to Выберите свой пол.
+And the 4 error equals to Выберите свой пол.
 And I can not see the error Укажите действительный день месяца.
 And I can not see the error Выберите месяц.
 And I can not see the error Укажите действительный год.

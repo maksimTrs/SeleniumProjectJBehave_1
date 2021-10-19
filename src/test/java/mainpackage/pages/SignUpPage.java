@@ -1,15 +1,17 @@
 package mainpackage.pages;
 
+import mainpackage.steps.jbehave.SignUpPageSteps;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 
 import java.util.List;
 
 @DefaultUrl("https://www.spotify.com/ru-ru/signup")
 public class SignUpPage extends PageObject {
-
 
     private By h2HeaderData = By.xpath("//div[@id='__next']//div/h2");
 

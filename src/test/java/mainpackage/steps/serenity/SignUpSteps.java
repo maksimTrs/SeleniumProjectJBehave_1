@@ -1,7 +1,10 @@
 package mainpackage.steps.serenity;
 
+import mainpackage.steps.jbehave.SignUpPageSteps;
 import net.thucydides.core.annotations.Step;
 import mainpackage.pages.SignUpPage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SignUpSteps {
     private SignUpPage signUpPage;
