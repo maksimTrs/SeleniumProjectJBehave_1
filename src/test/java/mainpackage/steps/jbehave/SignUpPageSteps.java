@@ -1,6 +1,7 @@
 package mainpackage.steps.jbehave;
 
 import mainpackage.steps.serenity.SignUpSteps;
+import mainpackage.tests.SeleniumRunner;
 import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
@@ -12,10 +13,17 @@ import org.jbehave.core.model.ExamplesTable;
 import java.util.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.runner.Description;
+import org.junit.runner.Result;
+import org.junit.runner.RunWith;
+import org.junit.runner.notification.RunListener;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SignUpPageSteps {
+//@RunWith(SeleniumRunner.class)
+public class SignUpPageSteps  {
+
+
     private static final String errorSpotifyYearField = "Вы не достигли возраста, с которого можно пользоваться сервисом Spotify.";
     private static Logger logger = LogManager.getLogger(SignUpPageSteps.class);
 

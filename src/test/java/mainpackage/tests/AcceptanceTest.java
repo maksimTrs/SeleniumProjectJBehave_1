@@ -3,7 +3,9 @@ package mainpackage.tests;
 import net.serenitybdd.jbehave.SerenityStories;
 import net.serenitybdd.jbehave.annotations.Metafilter;
 import org.jbehave.core.annotations.UsingEmbedder;
+import org.junit.runner.RunWith;
 
+@RunWith(SeleniumRunner.class)
 //@Metafilter("+theme test1")
 @UsingEmbedder(metaFilters = {"+theme test1", "+theme test2"})
 public class AcceptanceTest extends SerenityStories {
